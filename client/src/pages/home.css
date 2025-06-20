@@ -1,0 +1,108 @@
+body {
+    background-image: url('home-bg.png');
+    background-size: cover; /* or 'contain', or a percentage/px */
+    background-repeat: no-repeat; /* prevents tiling */
+    background-position: center; 
+    height: 100vh;
+    overflow: hidden;
+}
+
+.fixed-top-left {
+    position: fixed;
+    top: 4%;
+    left: 5%;
+    width: 160px; /* or any size you want */
+    height: auto;
+    z-index: 9999;
+    pointer-events: none;
+  }
+
+.nav {
+    font-family: "Geologica", sans-serif;
+    font-weight: 400;
+    margin: 60px 110px 0px 0px;
+    /* width: 100%; */
+    display: flex;
+    gap: 40px;
+    justify-content: right;
+    
+    font-size: 20px;
+}
+
+a {
+    text-decoration: none; 
+    color: inherit;  
+    color: #003638; 
+} 
+
+.content-body {
+    margin-top: -3%;
+    /* margin-left: 40%; */
+    margin-left: -6%;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+}
+
+#first-line {
+    display: flex;
+    color: #473202;
+    font-family: "Geologica", sans-serif;
+    font-size: 83px;
+    font-weight: bold;
+    gap: 20px;
+}
+
+#sec-line {
+    display: flex;
+    color: #085720;
+    font-family: "GFS Neohellenic", sans-serif;
+    font-size: 108px;
+    font-weight: bold;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#third-line {
+    display: flex;
+    color: #024547;
+    font-family: "Fragment Mono", monospace;
+    font-size: 30px;
+    font-weight: bold;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    gap: 20px;
+}
+
+#fourth-line {
+    display: flex;
+    justify-content: end;
+    font-weight: bold;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    margin-top:3%;
+    /* margin-right: 11%; */
+}
+
+#fourth-line > button {
+    display: flex;
+    width: 415px;
+    height: 83px;
+    box-shadow: 0;
+    background: #024547;
+    justify-content: center;
+    align-items: center;
+
+    color: #DDCF98;
+    font-family: "Geologica", sans-serif;
+    font-size: 25px;
+
+    border: 4px solid #9D8E53;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+#fourth-line > button:hover {
+    background: #0d5355;  
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.3); 
+    transform: translateY(-2px); 
+}
