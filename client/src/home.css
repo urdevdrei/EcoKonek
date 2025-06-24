@@ -1,11 +1,11 @@
-body {
-    background-image: url('home-bg.png');
-    background-size: cover; /* or 'contain', or a percentage/px */
-    background-repeat: no-repeat; /* prevents tiling */
+/* body {
+    background-image: url('../public/home-bg.png');
+    background-size: cover; 
+    background-repeat: no-repeat; 
     background-position: center; 
     height: 100vh;
     overflow: hidden;
-}
+} */
 
 .fixed-top-left {
     position: fixed;
