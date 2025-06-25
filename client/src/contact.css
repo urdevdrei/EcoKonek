@@ -1,0 +1,197 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    background: radial-gradient(
+    closest-side,
+    rgba(243, 255, 190, 1) 37.99999952316284%,
+    rgba(221, 207, 152, 1) 100%
+  );
+
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    margin: 0;
+    
+} 
+
+
+.nav {
+
+    font-family: "Geologica", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    padding-right: 8%;
+    height: 13vh;
+
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    gap: 40px;
+
+    background-color: #024547;
+}
+
+a {
+    text-decoration: none; 
+    color: inherit;  
+    color: #DDCF98;
+    
+} 
+
+.contact-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;  
+    gap: 20px;
+    padding-top: 20px;
+}
+
+
+.icon img {
+    width: 30px;   
+    height: 30px;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #DDCF98;
+    font-family: "Geologica", sans-serif;
+    font-size: 16px;
+}
+
+
+.contact-map {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    perspective: 1000px; /*3D*/
+
+}
+
+.contact-map img {
+    width: 100%;
+    border: 2px solid #9d8e53;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transform-style: preserve-3d;
+}
+
+.contact-map img:hover {
+    transform: scale(1.05) rotateX(2deg) rotateY(-2deg);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6), 0 0 10px #9d8e53;
+}
+
+#contact-us {
+    text-align: center;
+
+    font-family: "Geologica", sans-serif;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #473202;
+    font-size: 50px;
+    text-shadow: 0px 2px 2px #1a471f;
+}
+
+.content-body {
+    display: flex;
+    justify-content: center;
+
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px 20px;
+    height: auto;
+    width: 400px;
+
+    background-color: #024547;
+    border: 3px solid #9d8e53;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.5);
+    
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transform-style: preserve-3d;
+    will-change: transform;
+
+}
+
+.contact-container-wrapper {
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-container:hover {
+    transform: scale(1.03) rotateX(3deg) rotateY(-3deg);
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.5), 0 12px 20px rgba(0, 0, 0, 0.4), 0 0 10px #9d8e53;
+}
+
+
+
+.contact-body {
+    width: 50%;
+    padding-top: 100px;
+    padding-left: 50px;
+    box-sizing: border-box;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+label {
+    font-family: 'GFS Neohellenic', sans-serif;                                        
+    margin-bottom: 5px;
+    color: #024547;
+}
+
+input, textarea {
+    padding: 10px;
+    border: 2px solid #9D8E53;
+    font-family: "Geologica", sans-serif;
+}
+
+button {    
+    width: 150px;
+    padding: 15px;
+    background-color: #024547;
+    color: #DDCF98;
+    border: 2px solid #9d8e53;
+    cursor: pointer;
+    align-self: flex-end;
+    font-family: "Geologica", sans-serif;
+    transition: box-shadow 0.3s, transform 0.2s;
+}
+
+button:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
