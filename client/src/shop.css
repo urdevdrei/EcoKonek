@@ -28,16 +28,43 @@ body {
     position: relative;
 }
 
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+
+}
+
+.cart-icon {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    margin-right: 0;
+}
 .fixed-top-left {
     position: static;
     height: 60px;
     margin-left: 20px;
 }
 
+/* hamburger icon */
 .menu-icon {
-    font-size: 2rem;
-    color: #DDCF98;
-    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    width: 48px;
+    height: 48px;
+    
+}
+
+.menu-icon span {
+    display: block;
+    width: 40px;
+    height: 7px;
+    background: #111;
+    border-radius: 4px;
+    
 }
 
 /* Search Bar atbp. */
@@ -51,13 +78,34 @@ body {
 .shop-filters select {
     padding: 6px 12px;
     border-radius: 4px;
-    border: 1px solid #9d8e53;
-    background: #fff;
+    border: none;
+    background: transparent; 
     font-family: "Geologica", sans-serif;
     font-size: 15px;
+    box-shadow: none;        
 }
 
-.donate-btn, .exchange-btn {
+/* Remove blue highlight on select for Webkit browsers */
+.shop-filters select:focus {
+    outline: none;
+    box-shadow: none;
+    background: transparent;
+    color-scheme: light; /* Helps prevent forced dark mode highlight */
+}
+
+/* Remove blue highlight for Chrome/Edge/Safari */
+.shop-filters select:focus-visible {
+    outline: none;
+    box-shadow: none;
+    background: transparent;
+}
+
+/* Remove blue highlight for Firefox */
+.shop-filters select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #024547;
+}
+.donate-btn {
     background: #024547;
     color: #DDCF98;
     border: none;
@@ -65,7 +113,22 @@ body {
     padding: 7px 22px;
     font-family: "Geologica", sans-serif;
     font-size: 15px;
-    margin-right: 4px;
+    margin-right: 0;
+    margin-left: 55%; 
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.exchange-btn {
+    background: #024547;
+    color: #DDCF98;
+    border: none;
+    border-radius: 20px;
+    padding: 7px 22px;
+    font-family: "Geologica", sans-serif;
+    font-size: 15px;
+    margin-right: 0;
+    margin-left: auto; 
     cursor: pointer;
     transition: background 0.2s;
 }
@@ -75,13 +138,13 @@ body {
 }
 
 .search-bar {
-    margin-left: auto;
-    padding: 7px 16px;
-    border-radius: 20px;
-    border: 1.5px solid #9d8e53;
+    margin-right: 32px;
+    padding: 17px 16px;
+    border-radius: 50px;
+    border: 0.5px solid #9d8e53;
     font-family: "Geologica", sans-serif;
     font-size: 15px;
-    width: 220px;
+    width: 450px;
 }
 
 /* Main Banner */
