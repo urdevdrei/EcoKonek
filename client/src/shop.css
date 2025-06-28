@@ -5,14 +5,7 @@ html, body {
 }
 
 body {
-    background: radial-gradient(
-        closest-side,
-        rgba(243, 255, 190, 1) 38%,
-        rgba(221, 207, 152, 1) 100%
-    );
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    background: #DDCF98;
     margin: 0;
     font-family: "Geologica", sans-serif;
 }
@@ -26,6 +19,7 @@ body {
     height: 13vh;
     padding: 0 32px 0 0;
     position: relative;
+    margin-bottom: 100px;
 }
 
 .header-icons {
@@ -85,22 +79,22 @@ body {
     box-shadow: none;        
 }
 
-/* Remove blue highlight on select for Webkit browsers */
+
 .shop-filters select:focus {
     outline: none;
     box-shadow: none;
     background: transparent;
-    color-scheme: light; /* Helps prevent forced dark mode highlight */
+    color-scheme: light;
 }
 
-/* Remove blue highlight for Chrome/Edge/Safari */
+
 .shop-filters select:focus-visible {
     outline: none;
     box-shadow: none;
     background: transparent;
 }
 
-/* Remove blue highlight for Firefox */
+
 .shop-filters select:-moz-focusring {
     color: transparent;
     text-shadow: 0 0 0 #024547;
@@ -214,42 +208,43 @@ body {
 
 /* Product Carousel */
 .shop-carousel {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 0 32px 0;
-    gap: 12px;
+  background: #DDCF98;
+  padding: 48px 0;
+  margin: 0;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 320px;
 }
-
+.carousel-container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px; }
 .carousel-arrow {
-    background: none;
-    border: none;
-    color: #024547;
-    font-size: 2.5rem;
-    cursor: pointer;
-    padding: 0 12px;
-    transition: color 0.2s;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #024547;
 }
-
+.carousel-items {
+  display: flex;
+  gap: 32px;
+}
+.carousel-item {
+  width: 260px;
+  height: 260px;
+  background: #024547;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
 .carousel-arrow:hover {
     color: #7CFFB2;
 }
-
-.carousel-items {
-    display: flex;
-    gap: 24px;
-}
-
-.carousel-item {
-    width: 160px;
-    height: 160px;
-    background: #024547;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-    margin: 0 2px;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
 .carousel-item:hover {
     transform: scale(1.04);
     box-shadow: 0 6px 18px rgba(0,0,0,0.18);
@@ -277,4 +272,107 @@ body {
     }
 }
 
- 
+/*  Shop Clothing Section */
+.shop-clothing-section {
+  margin-top: 0;
+  padding: 0;
+  background: url('clotherack.png') center/cover no-repeat;
+  min-height: 400px;
+  width: 100%;
+  border-radius: 0px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.25);
+}
+
+/* Featured Products Section  */
+.featured-products-section {
+  background: #DDCF98;
+  padding: 40px 0;
+}
+.featured-products-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.featured-products-title {
+  text-align: center;
+  font-family: 'Dela Gothic One', sans-serif;
+  font-size: 2.5rem;
+  color: #2d2d1f;
+  margin-bottom: 16px;
+}
+.featured-products-filters {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.featured-filter {
+  background: none;
+  border: none;
+  font-family: 'Fira Sans', sans-serif;
+  margin: 0 8px;
+  color: #2d2d1f;
+  font-weight: normal;
+  cursor: pointer;
+}
+.featured-filter.active {
+  font-weight: bold;
+}
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 32px;
+}
+.product-card {
+  background: transparent;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.product-image {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 0;
+}
+.product-info {
+  padding: 12px 8px 8px 8px;
+  width: 100%;
+}
+.product-title {
+  font-weight: bold;
+  font-size: 1.05rem;
+  margin-bottom: 2px;
+}
+.product-price {
+  color: #222;
+  font-size: 0.98rem;
+  margin-bottom: 2px;
+}
+.product-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+}
+.product-cart,
+.product-heart {
+  background: none;
+  border: none;
+  margin: 0;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/*  Load More Button  */
+.featured-products-section button[style*="background: #1a2327"] {
+  background: #1a2327 !important;
+  color: #fff !important;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 36px;
+  cursor: pointer;
+}
