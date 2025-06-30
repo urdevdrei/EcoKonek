@@ -23,7 +23,7 @@ body {
 .nav {
 
     font-family: "Geologica", sans-serif;
-    font-weight: 400;
+    font-weight: 200;
     font-size: 20px;
     padding-right: 8%;
     height: 13vh;
@@ -42,6 +42,27 @@ a {
     color: #DDCF98;
     
 } 
+
+.nav a {
+    text-decoration: none;
+    color: #DDCF98;
+    position: relative;
+}
+
+.nav a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #DDCF98;
+    transition: width 0.3s ease-in-out;
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
 
 .contact-icons {
     display: flex;
