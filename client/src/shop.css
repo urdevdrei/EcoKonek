@@ -294,9 +294,10 @@ body {
 }
 .featured-products-title {
   text-align: center;
-  font-family: 'Dela Gothic One', sans-serif;
-  font-size: 2.5rem;
-  color: #2d2d1f;
+  font-family: 'Geologica', sans-serif;
+                                        
+  font-size: 4.5rem;
+  color: #473202;
   margin-bottom: 16px;
 }
 .featured-products-filters {
@@ -306,15 +307,13 @@ body {
 .featured-filter {
   background: none;
   border: none;
-  font-family: 'Fira Sans', sans-serif;
+  font-family: 'Geologica', sans-serif;
   margin: 0 8px;
-  color: #2d2d1f;
+  color: #1B4720;
   font-weight: normal;
   cursor: pointer;
 }
-.featured-filter.active {
-  font-weight: bold;
-}
+
 .products-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -375,4 +374,13 @@ body {
   border-radius: 8px;
   padding: 12px 36px;
   cursor: pointer;
+}
+
+footer {
+  background-color: #024547;
+  color: #F3FFBE;
+  padding: 100px;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+                                                
 }
