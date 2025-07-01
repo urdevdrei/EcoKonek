@@ -3,13 +3,23 @@
     <link rel="stylesheet" href="about.css">
     <link href="https://fonts.cdnfonts.com/css/geologica" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/fragment-mono" rel="stylesheet">
-                
-                
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
+                
+    
 <head>
     <title>EcoKonek</title>
 </head>
 <body>
+    
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+        <script>
+            AOS.init({
+            duration: 1000,
+            once: false,
+            mirror: true
+            });
+        </script>
 
      <div class="nav">
         <a href="">HOME</a>
@@ -24,13 +34,13 @@
         <div class="row">
 
             <!-- PICTURE -->
-            <div id="img-container">
+            <div id="img-container" data-aos="fade-right" data-aos-delay="200">
                 <img src="about image.jpg" id="about-image"> </img>
             </div> 
 
             <!-- ABOUT US -->
-            <div id="about">
-                <h1> ABOUT US </h1>
+            <div id="about" data-aos="fade-left" data-aos-delay="200">
+                <h1 > ABOUT US </h1>
                 <p id = "about-paragraph"> The EcoKonek application is designed to address the issues of waste generation and the lack of efficient recycling and reuse systems by  implementing modern online marketplaces. The app offers sustainable solutions for waste management.</p>
             </div>
             
@@ -41,17 +51,20 @@
         <div class="why-ecokonek">
 
             <!-- FIRST COLUMN -->
-            <div class="column">
-                <div class="card">
+            <div class="column" data-aos="fade-up">
+
+                <div class="card" data-aos="zoom-in" data-aos-delay="100">
                     <img src="fast shipping.jpg" id="about-image"> </img>
                 </div>
-                <div class="card">
+
+                <div class="card" data-aos="zoom-in" data-aos-delay="200">
+
                     <img src="trusted.jpg" id="about-image"> </img>
                 </div>
             </div>  
 
             <!-- SECOND COLUMN -->
-             <div class = "center-text">
+             <div class = "center-text" data-aos="fade-up" data-aos-delay="300">
 
                 <p class="why"> WHY </p>
                 <h1 class="ecokonek"> ECOKONEK </h1>
@@ -59,11 +72,12 @@
              </div>
 
              <!-- THIRD COLUMN -->
-             <div class="column">
-                <div class="card">
+             <div class="column" data-aos="fade-up">
+                <div class="card" data-aos="zoom-in" data-aos-delay="100">
                     <img src="ecokonek-trusted.jpg" id="about-image"> </img>
                 </div>
-                <div class="card">
+
+                <div class="card"  data-aos="zoom-in" data-aos-delay="200">
                     <img src="admi.jpg" id="about-image"> </img>
                 </div>
              </div>
@@ -74,18 +88,17 @@
         <div class="third-row">
 
             <!-- OUR TEAM -->
-                <h1 id = "title-team">
-                    OUR TEAM
-                </h1>
+                <h1 id="title-team" data-aos="fade-down">OUR TEAM</h1>
  
             <!-- MEMBERS -->
             <div class="container">
 
-                <div class="team-member">
+                <div class="team-member" data-aos="flip-left" data-aos-delay="100">
 
                     <div class="box">
-
+                        <img src ="IMG_2960.png" class="img-team" alt="Photo">
                     </div>
+                    
                     <h4 class="title"> Paul Andrei L. Santos</h4>
                     <image src="Arrow 2.svg"></image>
                     <p class="role"> Full Stack Developer</p>
@@ -106,7 +119,7 @@
 
                 </div>
 
-                <div class="team-member">
+                <div class="team-member" data-aos="flip-left" data-aos-delay="200">
                     <div class="box">
 
 
@@ -131,7 +144,7 @@
 
                 </div>
 
-                <div class="team-member">
+                <div class="team-member" data-aos="flip-left" data-aos-delay="300">
                     <div class="box">
 
 
@@ -150,16 +163,10 @@
                             <img src="IG LOGO.png" class="logo"></img>
                         </a>
                     </div>
-                    
-
                 </div>
-
             </div>
         </div>
-        
-
-
-
+    
     </div>
 
 </body>
