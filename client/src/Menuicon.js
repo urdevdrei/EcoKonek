@@ -1,8 +1,7 @@
-const Menuicon = document.querySelector('.menu-icon');
+const menuIcon = document.getElementById('menuIcon');
+const navMenu = document.getElementById('navMenu');
 
-const offScreenMenu = document.querySelector('.off-screen-menu');
-
-Menuicon.addEventListener('click', () => {
-    Menuicon.classList.toggle('active');
-    offScreenMenu.classList.toggle('active');
-})
+menuIcon.addEventListener('click', () => {
+  menuIcon.classList.toggle('active');
+  navMenu.classList.toggle('active');
+});
