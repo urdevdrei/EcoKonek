@@ -43,22 +43,37 @@ body {
 
 /* hamburger icon */
 .menu-icon {
+    height: 50px;
+    width: 40px;
+    margin-left: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 8px;
-    width: 48px;
-    height: 48px;
-    
+    cursor: pointer;
 }
 
 .menu-icon span {
+    height: 5px;
+    width: 100%;
+    background-color: #DDCF98;
     display: block;
-    width: 40px;
-    height: 7px;
-    background: #111;
-    border-radius: 4px;
+    border-radius: 25px;
+    transition: 0.3s ease;
     
+}
+
+.menu-icon.active span:nth-child(1) {
+   
+    transform: translateY(13px) rotate(45deg);
+}
+
+.menu-icon.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-icon.active span:nth-child(3) {
+    transform: translateY(-13px) rotate(-45deg);
 }
 
 /* Search Bar atbp. */
@@ -85,7 +100,7 @@ body {
     box-shadow: none;
     background: transparent;
     color-scheme: light;
-}
+}r
 
 
 .shop-filters select:focus-visible {
@@ -320,6 +335,8 @@ body {
   gap: 24px;
   margin-bottom: 32px;
 }
+
+/* Product box */
 .product-card {
   background: transparent;
   border-radius: 8px;
@@ -364,7 +381,6 @@ body {
   margin: 0;
   font-size: 1.2rem;
   cursor: pointer;
-  
 }
 
 /*  Load More Button  */
