@@ -323,7 +323,7 @@ body {
 .product-card {
   background: transparent;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  background-color: #024547;
   padding: 0;
   margin: 0;
   display: flex;
@@ -339,14 +339,16 @@ body {
 .product-info {
   padding: 12px 8px 8px 8px;
   width: 100%;
+  
 }
 .product-title {
   font-weight: bold;
   font-size: 1.05rem;
   margin-bottom: 2px;
+  color: #DDCF98;
 }
 .product-price {
-  color: #222;
+  color: #DDCF98;
   font-size: 0.98rem;
   margin-bottom: 2px;
 }
@@ -362,6 +364,7 @@ body {
   margin: 0;
   font-size: 1.2rem;
   cursor: pointer;
+  
 }
 
 /*  Load More Button  */
