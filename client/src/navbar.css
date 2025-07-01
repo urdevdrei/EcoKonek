@@ -1,0 +1,36 @@
+.nav {
+    font-family: "Geologica", sans-serif;
+    display: flex;
+    gap: 40px;
+    justify-content: right;
+    align-items: center;
+    
+    font-size: 20px;
+
+    font-weight: 200;
+    padding-right: 8%;
+    height: 13vh;
+
+    background-color: #024547;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #DDCF98;
+    position: relative;
+}
+
+.nav a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #DDCF98;
+    transition: width 0.3s ease-in-out;
+}
+
+.nav a:hover::after {
+    width: 100%;
+}

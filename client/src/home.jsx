@@ -1,11 +1,12 @@
 import React from "react";
 import "./home.css"; // import CSS file
+import Navbar from './Navbar';
 
 const Home = () => {
   return (
     <div
       style={{
-        backgroundImage: "url('home-bg.png')",
+        backgroundImage: "url('/images/home-bg.png')",
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
@@ -13,25 +14,20 @@ const Home = () => {
         overflow: 'hidden',
       }}
     >
-      <img src="/eco-logo.png" alt="Logo" className="fixed-top-left" />
+      <img src="/images/eco-logo.png" alt="Logo" className="fixed-top-left" />
 
-      <nav className="nav">
-        <a href="/">HOME</a>
-        <a href="/">ABOUT</a>
-        <a href="/">SHOP</a>
-        <a href="/">CONTACT</a>
-      </nav>
+      <Navbar id="home-nav" />
 
-      <div className="content-body">
+      <div className="home-body">
         <div id="first-line">
           JOIN THE
-          <img src="/Arrow 1.svg" alt="arrow-1" />
+          <img src="/images/arrow-1.svg" alt="arrow-1" />
         </div>
 
         <div id="sec-line">CIRCULAR ECONOMY</div>
 
         <div id="third-line">
-          <img src="/Arrow 2.svg" alt="arrow-2" />
+          <img src="/images/arrow-2.svg" alt="arrow-2" />
           Donate, Exchange, and Shop Sustainably
         </div>
 
