@@ -29,11 +29,24 @@ body {
 
 }
 
-.cart-icon {
-    width: 60px;
-    height:60px;
-    object-fit: contain;
-    margin-right: 0;
+.cart-header-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+}
+
+.cart-header-btn .cart-svg {
+  width: 2.5em;
+  height: 2.5em;
+  transition: filter 0.2s, transform 0.2s;
+}
+
+.cart-header-btn:hover .cart-svg {
+  filter: brightness(1.2);
+  transform: scale(1.1);
 }
 .fixed-top-left {
     position: static;
@@ -43,8 +56,8 @@ body {
 
 /* hamburger icon */
 .menu-icon {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -83,7 +96,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 25px;
-  padding: 150px 100px;
+  padding: 100px 85px;
   opacity: 0;
   pointer-events: none;
   transform: translateY(-20px);
