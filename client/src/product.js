@@ -17,7 +17,7 @@ const products = [
 ];
 
 const cartSVG = `
-<svg width="24" height="24" viewBox="0 0 43 43">
+<svg class="cart-svg" width="24" height="24" viewBox="0 0 43 43">
   <path d="M2 6H7.5L11.5 29H36.5L41 13H10" stroke="#DDCF98" stroke-width="4" fill="#DDCF98"/>
   <circle cx="15" cy="36" r="3" fill="#DDCF98"/>
   <circle cx="33" cy="36" r="3" fill="#DDCF98"/>
@@ -25,7 +25,7 @@ const cartSVG = `
 `;
 
 const heartSVG = `
-<svg width="24" height="24" viewBox="0 0 43 43" fill="#DDCF98">
+<svg class="heart-svg" width="24" height="24" viewBox="0 0 43 43" fill="#DDCF98">
   <path d="M37.3383 8.25968C36.4232 7.34415 35.3367 6.61788 34.1408 6.12237C32.945 5.62686 
   31.6632 5.37183 30.3687 5.37183C29.0743 5.37183 27.7925 5.62686 26.5966 6.12237C25.4008 6.61788 
   24.3143 7.34415 23.3992 8.25968L21.5 10.1588L19.6008 8.25968C17.7524 6.41123 15.2453 5.37278 12.6312 
@@ -85,17 +85,20 @@ menuIcon.addEventListener('click', () => {
 });
 
 
+
+// Cart functionality
+
 let cartCount = 0;
 
-// Listen for clicks on all "Add to Cart" buttons
+
 document.addEventListener('DOMContentLoaded', function() {
-  // Update cart badge function
+ 
   function updateCartBadge() {
     const badge = document.getElementById('cartBadge');
     if (badge) badge.textContent = cartCount;
   }
 
-  // Attach event listeners to all add-to-cart buttons
+  
   document.querySelectorAll('.product-cart').forEach(function(btn) {
     btn.addEventListener('click', function() {
       cartCount++;
@@ -103,6 +106,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Initialize badge on page load
+  
   updateCartBadge();
 });

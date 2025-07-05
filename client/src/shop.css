@@ -31,8 +31,8 @@ body {
 
 .header-icon-badge {
   position: absolute;
-  top: -4px;    /* Adjust as needed */
-  right: 6px;  /* Adjust as needed */
+  top: -4px;    
+  right: 6px;  
   min-width: 18px;
   height: 18px;
   background: #e90524;
@@ -70,7 +70,14 @@ body {
 .cart-header-btn:hover .cart-svg {
   filter: brightness(1.2);
   transform: scale(1.1);
+  
 }
+
+.cart-header-btn:hover{
+  transition: background 0.2s,  transform 0.2s;
+  transform: scale(1.08);
+}
+
 .fixed-top-left {
     position: static;
     height: 60px;
@@ -88,6 +95,11 @@ body {
   cursor: pointer;
   z-index: 101;
   position: relative;
+}
+
+.menu-icon:hover{
+  transition: background 0.2s,  transform 0.2s;
+  transform: scale(1.08);
 }
 
 .menu-icon span {
@@ -448,13 +460,36 @@ body {
   gap: 8px; 
   z-index: 2;
 }
+
 .product-cart,
 .product-heart {
   background: none;
   border: none;
   margin: 0;
-  font-size: 1.2rem;
+  padding: 0;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-heart .cart-svg,
+.product-heart .heart-svg {
+  transition: stroke 0.2s, fill 0.2s;
+}
+
+.product-heart:hover .heart-svg path {
+  stroke: #fff !important;
+  fill:none !important;
+}
+.product-cart:hover .cart-svg path {
+  stroke: #fff !important;
+  fill: none !important;
+}
+
+.product-cart:hover .cart-svg circle {
+  fill: #fff !important;  
+  stroke: #fff !important;
 }
 
 /*  Load More Button  */
