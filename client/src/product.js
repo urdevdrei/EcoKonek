@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <path stroke="#DDCF98" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 
   2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
 </svg>
-
+        <span class="header-icon-badge" id="cartBadge">0</span>
 
     </button>
   `;
@@ -85,3 +85,24 @@ menuIcon.addEventListener('click', () => {
 });
 
 
+let cartCount = 0;
+
+// Listen for clicks on all "Add to Cart" buttons
+document.addEventListener('DOMContentLoaded', function() {
+  // Update cart badge function
+  function updateCartBadge() {
+    const badge = document.getElementById('cartBadge');
+    if (badge) badge.textContent = cartCount;
+  }
+
+  // Attach event listeners to all add-to-cart buttons
+  document.querySelectorAll('.product-cart').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      cartCount++;
+      updateCartBadge();
+    });
+  });
+
+  // Initialize badge on page load
+  updateCartBadge();
+});
