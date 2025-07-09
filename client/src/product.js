@@ -36,7 +36,9 @@ const heartSVG = `
 </svg>
 `;
 
-const grid = document.getElementById('products-grid');
+document.addEventListener('DOMContentLoaded', function() {
+
+  const grid = document.getElementById('products-grid'); if (grid) {
 grid.innerHTML = products.map(product => `
   <div class="product-card">
     <img src="${product.image}" alt="${product.title}" class="product-image">
@@ -51,10 +53,9 @@ grid.innerHTML = products.map(product => `
   </div>
 `).join('');
 
+}
 
-
-document.addEventListener('DOMContentLoaded', function() {
-  const cartHeaderSVG = `
+const cartHeaderSVG = `
     <button class="cart-header-btn" id="cartHeaderBtn" title="View Cart">
       <svg  xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 24 24">
   <path stroke="#DDCF98" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 
@@ -64,48 +65,57 @@ document.addEventListener('DOMContentLoaded', function() {
 
     </button>
   `;
-
   
-  const headerIcons = document.querySelector('.header-icons');
+   const headerIcons = document.querySelector('.header-icons');
   if (headerIcons) {
     headerIcons.insertAdjacentHTML('afterbegin', cartHeaderSVG);
   }
-});
 
 
 
-//ham icon
+// Cart toggle 
+  const iconCart = document.querySelector('.cart-header-btn');
+  const body = document.querySelector('body');
+  if (iconCart) {
+    iconCart.addEventListener('click', () => {
+      body.classList.toggle('showcart');
+    });
+  }
 
-const menuIcon = document.getElementById('menuIcon');
-const navMenu = document.getElementById('navMenu');
+const closeBtn = document.getElementById('closeBtn');
+if (closeBtn) {
+  closeBtn.addEventListener('click', () => {
+    body.classList.remove('showcart');
+  });
+}
 
-menuIcon.addEventListener('click', () => {
-  menuIcon.classList.toggle('active');
-  navMenu.classList.toggle('active');
-});
+ // Hamburger menu 
+  const menuIcon = document.getElementById('menuIcon');
+  const navMenu = document.getElementById('navMenu');
+  
+  if (menuIcon && navMenu) {
+    menuIcon.addEventListener('click', () => {
+      menuIcon.classList.toggle('active');
+      navMenu.classList.toggle('active');
+
+    });
+  }
 
 
 
-// Cart functionality
-
-let cartCount = 0;
-
-
-document.addEventListener('DOMContentLoaded', function() {
- 
+  // Cart badge 
+  let cartCount = 0;
   function updateCartBadge() {
     const badge = document.getElementById('cartBadge');
     if (badge) badge.textContent = cartCount;
   }
 
-  
   document.querySelectorAll('.product-cart').forEach(function(btn) {
     btn.addEventListener('click', function() {
       cartCount++;
       updateCartBadge();
     });
   });
-
-  
   updateCartBadge();
 });
+
