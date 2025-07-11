@@ -76,8 +76,8 @@ function About() {
               name="Kyle Adrian Santos"
               role="Full Stack Developer"
               imgSrc="images/home-bg.png"
-              fb="https://www.facebook.com/"
-              ig="https://www.instagram.com/"
+              fb="https://www.facebook.com/leoncio.kyle"
+              ig="https://www.instagram.com/santos__kyle/"
             />
 
             {/* Team Member 3 */}
@@ -85,8 +85,8 @@ function About() {
               name="Jim Dale Abad"
               role="Full Stack Developer"
               imgSrc="images/home-bg.png"
-              fb="https://www.facebook.com/"
-              ig="https://www.instagram.com/"
+              fb="https://www.facebook.com/jeydee.4"
+              ig="https://www.instagram.com/iamjeyd_/"
             />
 
           </div>
