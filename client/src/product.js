@@ -16,44 +16,72 @@ const products = [
   { image: "pic12.png", title: "Lamp", price: "₱149.00" }
 ];
 
-const cartSVG = `
-<svg class="cart-svg" width="24" height="24" viewBox="0 0 43 43">
-  <path d="M2 6H7.5L11.5 29H36.5L41 13H10" stroke="#DDCF98" stroke-width="4" fill="#DDCF98"/>
-  <circle cx="15" cy="36" r="3" fill="#DDCF98"/>
-  <circle cx="33" cy="36" r="3" fill="#DDCF98"/>
-</svg>
-`;
 
-const heartSVG = `
-<svg class="heart-svg" width="24" height="24" viewBox="0 0 43 43" fill="#DDCF98">
-  <path d="M37.3383 8.25968C36.4232 7.34415 35.3367 6.61788 34.1408 6.12237C32.945 5.62686 
-  31.6632 5.37183 30.3687 5.37183C29.0743 5.37183 27.7925 5.62686 26.5966 6.12237C25.4008 6.61788 
-  24.3143 7.34415 23.3992 8.25968L21.5 10.1588L19.6008 8.25968C17.7524 6.41123 15.2453 5.37278 12.6312 
-  5.37278C10.0171 5.37278 7.51011 6.41123 5.66166 8.25968C3.81321 10.1081 2.77477 12.6152 2.77477 15.2293C2.77476 
-  17.8434 3.81321 20.3504 5.66166 22.1988L21.5 38.0372L37.3383 22.1988C38.2539 21.2837 38.9801 20.1972 39.4756 19.0014C39.9711 
-  17.8055 40.2262 16.5237 40.2262 15.2293C40.2262 13.9348 39.9711 12.653 39.4756 11.4572C38.9801 10.2613 38.2539 9.17478 37.3383 8.25968Z" 
-  stroke="#DDCF98" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-`;
+let cart = [];
+
+const cartSVG = `<svg class="cart-svg" width="24" height="24" viewBox="0 0 43 43"><path d="M2 6H7.5L11.5 29H36.5L41 13H10" stroke="#DDCF98" stroke-width="4" fill="#DDCF98"/><circle cx="15" cy="36" r="3" fill="#DDCF98"/><circle cx="33" cy="36" r="3" fill="#DDCF98"/></svg>`;
+const heartSVG = `<svg class="heart-svg" width="24" height="24" viewBox="0 0 43 43" fill="#DDCF98"><path d="M37.3383 8.25968C36.4232 7.34415 35.3367 6.61788 34.1408 6.12237C32.945 5.62686 31.6632 5.37183 30.3687 5.37183C29.0743 5.37183 27.7925 5.62686 26.5966 6.12237C25.4008 6.61788 24.3143 7.34415 23.3992 8.25968L21.5 10.1588L19.6008 8.25968C17.7524 6.41123 15.2453 5.37278 12.6312 5.37278C10.0171 5.37278 7.51011 6.41123 5.66166 8.25968C3.81321 10.1081 2.77477 12.6152 2.77477 15.2293C2.77476 17.8434 3.81321 20.3504 5.66166 22.1988L21.5 38.0372L37.3383 22.1988C38.2539 21.2837 38.9801 20.1972 39.4756 19.0014C39.9711 17.8055 40.2262 16.5237 40.2262 15.2293C40.2262 13.9348 39.9711 12.653 39.4756 11.4572C38.9801 10.2613 38.2539 9.17478 37.3383 8.25968Z" stroke="#DDCF98" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+
 
 document.addEventListener('DOMContentLoaded', function() {
+  // Render products
+  const grid = document.getElementById('products-grid');
+  if (grid) {
+    grid.innerHTML = products.map((product, idx) => `
+      <div class="product-card">
+        <img src="${product.image}" alt="${product.title}" class="product-image">
+        <div class="product-info">
+          <div class="product-title">${product.title}</div>
+          <div class="product-price">${product.price}</div>
+          <div class="product-actions">
+            <button class="product-cart" data-index="${idx}">${cartSVG}</button>
+            <button class="product-heart">${heartSVG}</button>
+          </div>
+        </div>
+      </div>
+    `).join('');
+  }
 
-  const grid = document.getElementById('products-grid'); if (grid) {
-grid.innerHTML = products.map(product => `
-  <div class="product-card">
-    <img src="${product.image}" alt="${product.title}" class="product-image">
-    <div class="product-info">
-      <div class="product-title">${product.title}</div>
-      <div class="product-price">${product.price}</div>
-      <div class="product-actions">
-        <button class="product-cart">${cartSVG}</button>
-        <button class="product-heart">${heartSVG}</button>
+  // cart items render
+function renderCart() {
+  const cartList = document.querySelector('.Cartlist');
+  if (!cartList) return;
+  cartList.innerHTML = cart.map(item => `
+    <div class="item">
+      <img src="${item.image}" alt="">
+      <div class="name">${item.title}</div>
+      <div class="totalPrice">${item.price}</div>
+      <div class="quantity">
+        <span class="minus">-</span>
+        <span>${item.quantity}</span>
+        <span class="plus">+</span>
       </div>
     </div>
-  </div>
-`).join('');
-
+  `).join('');
 }
+
+// Cart badge 
+  let cartCount = 0;
+  function updateCartBadge() {
+    const badge = document.getElementById('cartBadge');
+    if (badge) badge.textContent = cart.reduce((Sum, item) => Sum + item.quantity, 0);
+  }
+
+  //Add to cart logic
+document.querySelectorAll('.product-cart').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    const idx = btn.getAttribute('data-index');
+    const product = products[idx];
+    const found = cart.find(item => item.title === product.title);
+    if (found) {
+      found.quantity += 1;
+    } else {
+      cart.push({ ...product, quantity: 1 });
+    }
+    updateCartBadge();
+    renderCart();
+  });
+});
 
 const cartHeaderSVG = `
     <button class="cart-header-btn" id="cartHeaderBtn" title="View Cart">
@@ -70,7 +98,6 @@ const cartHeaderSVG = `
   if (headerIcons) {
     headerIcons.insertAdjacentHTML('afterbegin', cartHeaderSVG);
   }
-
 
 
 // Cart toggle 
@@ -101,21 +128,6 @@ if (closeBtn) {
     });
   }
 
-
-
-  // Cart badge 
-  let cartCount = 0;
-  function updateCartBadge() {
-    const badge = document.getElementById('cartBadge');
-    if (badge) badge.textContent = cartCount;
-  }
-
-  document.querySelectorAll('.product-cart').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      cartCount++;
-      updateCartBadge();
-    });
-  });
-  updateCartBadge();
+updateCartBadge();
+renderCart();
 });
-
