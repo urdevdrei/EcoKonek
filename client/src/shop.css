@@ -89,6 +89,23 @@ body.showcart .header-icon-badge {
     margin-left: 20px;
 }
 
+.cart-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 9998;
+  transition: opacity 0.3s;
+}
+
+body.showcart .cart-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+
 .cart-tab{
   width: 400px;
   inset: 0 -400px 0 auto;
@@ -99,6 +116,7 @@ body.showcart .header-icon-badge {
   grid-template-rows: 70px 1fr 70px;
   transition:right .5s, opacity .5s; 
   pointer-events:  none;
+  z-index: 9999;
 }
 
 body.showcart .cart-tab {

@@ -109,6 +109,7 @@ const cartHeaderSVG = `
     });
   }
 
+  //close btn
 const closeBtn = document.getElementById('closeBtn');
 if (closeBtn) {
   closeBtn.addEventListener('click', () => {
