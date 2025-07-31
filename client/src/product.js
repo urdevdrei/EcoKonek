@@ -46,8 +46,8 @@ document.addEventListener('DOMContentLoaded', function() {
 function renderCart() {
   const cartList = document.querySelector('.Cartlist');
   if (!cartList) return;
-  cartList.innerHTML = cart.map(item => `
-    <div class="item">
+  cartList.innerHTML = cart.map((item,idx) => `
+    <div class="item" data-cart-index="${idx}">
       <img src="${item.image}" alt="">
       <div class="name">${item.title}</div>
       <div class="totalPrice">${item.price}</div>
@@ -58,7 +58,28 @@ function renderCart() {
       </div>
     </div>
   `).join('');
+
+  
+  
+  cartList.querySelectorAll('.plus, .minus').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const itemDiv = btn.closest('.item');
+      const idx = itemDiv.getAttribute('data-cart-index');
+      if (btn.classList.contains('plus')) {
+        cart[idx].quantity += 1;
+      } else if (btn.classList.contains('minus')) {
+        cart[idx].quantity -= 1;
+        if (cart[idx].quantity <= 0) {
+          cart.splice(idx, 1);
+        }
+      }
+
+      updateCartBadge();
+      renderCart();
+    });
+  });
 }
+
 
 // Cart badge 
   let cartCount = 0;
